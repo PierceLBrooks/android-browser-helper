@@ -13,5 +13,11 @@
 <resources>
     <string name="app_name">Custom Tab Headers Demo</string>
     <string name="extra_headers">Extra Headers</string>
+    <string name="permission_name">com.google.androidbrowserhelper.demos.customtabsheaders.permission.EXTRA_HEADERS_PERMISSION</string>
+    <string name="permission_label">Headers Permission Label</string>
+    <string name="permission_description">Headers Permission Label</string>
+    <string name="permission_group_name">com.google.androidbrowserhelper.demos.customtabsheaders.PERMISSION_GROUP</string>
+    <string name="permission_group_label">Headers Permission Group Label</string>
+    <string name="permission_group_description">Headers Permission Group Label</string>
 </resources>
 

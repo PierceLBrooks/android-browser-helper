@@ -15,20 +15,35 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.google.androidbrowserhelper.demos.customtabsheaders">
     <queries>
+        <package android:name="com.google.androidbrowserhelper.demos.customtabsheaders" />
         <intent>
             <action android:name="android.support.customtabs.action.CustomTabsService" />
         </intent>
     </queries>
 
+    <!--<permission-group
+        android:name="@string/permission_group_name"
+        android:label="@string/permission_group_label"
+        android:description="@string/permission_group_description" />
+
+    <permission
+        android:name="@string/permission_name"
+        android:label="@string/permission_label"
+        android:description="@string/permission_description"
+        android:permissionGroup="@string/permission_group_name"
+        android:protectionLevel="normal" />-->
+
+    <uses-permission android:name="@string/permission_name" />
+
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.google.androidbrowserhelper.demos.customtabsheaders.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
