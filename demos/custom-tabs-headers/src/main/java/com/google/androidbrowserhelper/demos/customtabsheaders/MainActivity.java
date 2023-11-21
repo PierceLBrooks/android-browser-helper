@@ -42,14 +42,14 @@ public class MainActivity extends Activity {
     // project at https://glitch.com/edit/#!/custom-tabs-custom-he, edit the file under
     // `public/.well-known/assetlinks.json` with your own SHA-256 fingerprint (use Tools > Terminal
     // to find and edit the file), and update the URL below to the new project.
-    private static final Uri URL = Uri.parse("https://custom-tabs-custom-he.glitch.me/");
+    private static final Uri URL = Uri.parse("https://www.cylog.org/headers/");
 
     private CustomTabsSession mSession;
     private CustomTabsServiceConnection mConnection;
 
     private Button mExtraButton;
 
-    @Override
+    /*@Override
     protected void onStart() {
         super.onStart();
 
@@ -87,7 +87,10 @@ public class MainActivity extends Activity {
                 "com.chrome.canary",
                 "com.chrome.dev",
                 "com.chrome.beta",
-                "com.android.chrome"
+                "com.android.chrome",
+                "org.mozilla.firefox",
+                "org.mozilla.focus",
+                "org.mozilla.focus.debug"
         );
         String packageName =
                 CustomTabsClient.getPackageName(MainActivity.this, packageNames, false);
@@ -99,7 +102,7 @@ public class MainActivity extends Activity {
             CustomTabsClient.bindCustomTabsService(this, packageName, mConnection);
         }
 
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +110,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mExtraButton = findViewById(R.id.btn_extra);
+        //mExtraButton.setEnabled(false);
         mExtraButton.setOnClickListener(view -> {
             CustomTabsIntent intent = constructExtraHeadersIntent(mSession);
             intent.launchUrl(MainActivity.this, URL);
@@ -123,7 +127,7 @@ public class MainActivity extends Activity {
             mConnection = null;
             mSession = null;
         }
-        mExtraButton.setEnabled(false);
+        //mExtraButton.setEnabled(false);
     }
 
     private CustomTabsIntent constructExtraHeadersIntent(CustomTabsSession session) {
